@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Import Cinzel Font */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Title Styling */
+        .page-title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
+            text-shadow: 2px 4px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+        /* Transparent Box Styling */
+        .status-box {
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .status-box.completed {
+            background: rgba(76, 175, 80, 0.2); /* Greenish transparent */
+        }
+
+        .status-box.in-progress {
+            border-color: #ffeb3b;
+            box-shadow: 0 0 20px 4px #ffeb3b; /* Glow effect for current stage */
+        }
+
+        .status-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Status Circle Styling */
+        .status-circle {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .status-circle.completed {
+            background-color: #00ff08;
+        }
+
+        .status-circle.in-progress {
+            background-color: #ffeb3b;
+        }
+
+        .status-circle.to-be-processed {
+            background-color: #f44336;
+        }
+
+        .status-circle.notified {
+            background-color: #2196f3;
+        }
+
+        .status-circle.waiting {
+            background-color: #9c27b0;
+        }
+
+        .status-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .status-box p {
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Title -->
+    <div class="page-title">Track Your Status</div>
+
+    <!-- Status Boxes -->
+    <div class="status-box completed">
+        <div class="status-circle completed">
+            <span>✔️</span>
+        </div>
+        <h3>Application Submitted</h3>
+        <p>Your application has been successfully submitted.</p>
+    </div>
+
+    <div class="status-box completed">
+        <div class="status-circle completed">
+            <span>✔️</span>
+        </div>
+        <h3>Documents Verified</h3>
+        <p>All uploaded documents have been reviewed and approved.</p>
+    </div>
+
+    <div class="status-box in-progress">
+        <div class="status-circle in-progress">
+            <span>⏳</span>
+        </div>
+        <h3>Application in Review</h3>
+        <p>Your application is being processed by the authorities.</p>
+    </div>
+
+    <div class="status-box">
+        <div class="status-circle to-be-processed">
+            <span>🕒</span>
+        </div>
+        <h3>Approval Pending</h3>
+        <p>Your application is awaiting final approval.</p>
+    </div>
+
+    <div class="status-box">
+        <div class="status-circle to-be-processed">
+            <span>🎉</span>
+        </div>
+        <h3>Application Approved</h3>
+        <p>Congratulations! Your application has been approved.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 SCHEME-AID. All Rights Reserved.
+    </div>
+</body>
+</html>

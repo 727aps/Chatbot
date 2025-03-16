@@ -1,0 +1,36 @@
+version: "3.1"
+stories:
+  - story: greet and explore schemes
+    steps:
+      - intent: greeting
+      - action: utter_greet
+      - intent: explore_schemes
+      - action: utter_ask_age_range
+
+  - story: check application status
+    steps:
+      - intent: greeting
+      - action: utter_greet
+      - intent: check_application_status
+      - action: utter_check_status
+
+  - story: Select age range and gender
+    steps:
+      - intent: select_age_range
+      - action: utter_ask_gender
+      - intent: select_gender
+      - action: utter_show_schemes
+
+  - story: Select scheme and next action
+    steps:
+      - intent: select_scheme
+      - action: utter_ask_next_action
+      - intent: apply
+      - action: utter_apply
+
+  - story: View details of the scheme
+    steps:
+      - intent: view_details
+      - action: utter_view_stats
+      - intent: apply
+      - action: utter_apply

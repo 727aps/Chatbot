@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheme Simulation - SCHEME-AID</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif; /* Clean and modern font */
+        }
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Wrapper for Sections */
+        .container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh; /* Boxes cover most of the page */
+        }
+
+        /* Section Styling */
+        .section {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Text Section */
+        .text-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .text-section .message {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            line-height: 2;
+            text-align: center;
+        }
+
+        .text-section .scheme-name {
+            font-size: 2.2rem;
+            margin: 20px 0;
+            font-style: italic;
+            color: #ffcc00;
+        }
+
+        .text-section .details {
+            font-size: 1.5rem;
+            line-height: 2.5;
+            text-align: left;
+        }
+
+        /* Graph Section */
+        .graph {
+            width: 100%;
+            max-height: 500px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .section {
+                height: 50vh;
+            }
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Container for Sections -->
+    <div class="container">
+        <!-- Left Section: Text -->
+        <div class="section text-section">
+            <h1>John Doe</h1>
+            <p class="message">"This scheme is your pathway to a financially secure and independent future!"</p>
+            <p class="scheme-name">Financial Growth Scheme</p>
+            <p class="details">
+                This scheme provides:
+                <ul>
+                    <li>Financial counseling sessions</li>
+                    <li>Subsidies for daily essentials</li>
+                    <li>Job opportunities tailored to your skills</li>
+                </ul>
+                <br>
+                Factors analyzed for this simulation:
+                <ul>
+                    <li>Monthly income</li>
+                    <li>Expenses</li>
+                    <li>Family size</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Right Section: Graph -->
+        <div class="section">
+            <canvas id="futureGraph" class="graph"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Chart.js Graph Configuration
+        const ctx = document.getElementById('futureGraph').getContext('2d');
+
+        const futureGraph = new Chart(ctx, {
+            type: 'line', // Line chart for smoother trends
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'], // Simulated time progression
+                datasets: [{
+                    label: 'Projected Income ($)',
+                    data: [10000, 12000, 15000, 18000, 22000], // Simulated data
+                    backgroundColor: 'rgba(255, 165, 0, 0.2)', // Transparent fill for line
+                    borderColor: '#ffa500', // Bright orange line
+                    borderWidth: 3,
+                    tension: 0.4 // Smooth curve
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            color: '#ffffff',
+                            font: {
+                                size: 16
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#ffffff',
+                            font: {
+                                size: 16
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#ffffff',
+                            font: {
+                                size: 16
+                            },
+                            stepSize: 5000
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

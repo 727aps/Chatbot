@@ -1,0 +1,54 @@
+version: "3.1"
+intents:
+  - greeting
+  - explore_schemes
+  - check_application_status
+  - select_age_range
+  - select_gender
+  - select_scheme
+  - view_stats
+  - apply
+
+entities:
+  - age_range
+  - gender
+  - scheme
+
+slots:
+  age_range:
+    type: text
+  gender:
+    type: text
+  scheme:
+    type: text
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today? Please choose an option:\n- [Explore schemes](#)\n- [Check application status](#)"
+
+  utter_ask_age_range:
+    - text: "Please select your age range:\n[18-20](#)\n[30-40](#)\n[40 and above](#)"
+
+  utter_ask_gender:
+    - text: "Got it! Now, select your gender:\n- [Male](#)\n- [Female](#)\n- [Other](#)"
+
+  utter_show_schemes:
+    - text: "Here are the available schemes. Please select one to proceed.\n [Scheme 1](#) \n  [Scheme 1](#)"
+
+  utter_ask_next_action:
+    - text: "What would you like to do next?\n- [View stats](#) (details about the scheme)\n- [Apply](#)"
+
+  utter_view_stats:
+    - text: "Here are the details about the scheme. Let me know if you'd like to apply."
+
+  utter_apply:
+    - text: "Click here to apply for the scheme: [Apply Now](https://example.com/apply)"
+
+  utter_check_status:
+    - text: "Please provide your application ID or credentials to check the status."
+
+  utter_default:
+    - text: "I'm sorry, I didn't understand that. Can you try again?"
+
+  utter_select_scheme:
+    - text: "You have selected the scheme. Let me know if you'd like to view details or apply."

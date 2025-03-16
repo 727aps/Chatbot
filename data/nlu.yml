@@ -1,0 +1,74 @@
+version: "3.1"
+nlu:
+  - intent: greeting
+    examples: |
+      - hi
+      - hello
+      - hey
+      - good morning
+      - good evening
+      - how are you?
+
+  - intent: explore_schemes
+    examples: |
+      - explore schemes
+      - show me schemes
+      - list the schemes
+      - I want to explore schemes
+      - what schemes are available?
+
+  - intent: check_application_status
+    examples: |
+      - check application status
+      - I want to check my application
+      - how can I check the status?
+      - check my application progress
+
+  - intent: select_age_range
+    examples: |
+      - 18-20
+      - 30-40
+      - 40 and above
+      - I am in my 20s
+      - My age is 35
+
+  - intent: select_gender
+    examples: |
+      - Male
+      - Female
+      - Other
+      - I am a male
+      - I am female
+      - Non-binary
+
+  - intent: select_scheme
+    examples: |
+      - scheme 1
+      - scheme 2
+      - show me scheme details
+      - I want to view scheme 3
+      - select scheme 4
+
+  - intent: view_stats
+    examples: |
+      - view stats
+      - show details
+      - I want to see the stats
+      - more information about the scheme
+      - details of this scheme
+
+  - intent: apply
+    examples: |
+      - apply
+      - I want to apply
+      - start my application
+      - how can I apply?
+      - sign me up for this scheme
+
+  - intent: out_of_scope
+    examples: |
+      - I don't understand
+      - help me
+      - what can I do here?
+      - I need assistance
+      - not sure what to choose

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents - SCHEME-AID</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Container Styling */
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 40px 50px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .form-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* File Upload Grid */
+        .upload-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* File Upload Area */
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .upload-area:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .upload-area span {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* File Inputs */
+        input[type="file"] {
+            display: none;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background: #004080;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: #0066cc;
+            transform: scale(1.05);
+        }
+
+        /* Chatbot Button */
+        .chatbot-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #004080;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .chatbot-btn:hover {
+            transform: rotate(360deg);
+        }
+
+        .chatbot-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #dddddd;
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Document Upload Container -->
+    <div class="form-container">
+        <h1>Upload Documents</h1>
+        <form>
+            <div class="upload-grid">
+                <label for="file1" class="upload-area" title="Upload your Aadhar Card">
+                    Upload Aadhar Card
+                    <input type="file" id="file1" accept=".pdf,.jpg,.png,.docx,.xlsx">
+                    <span>(Accepted formats: PDF, JPG, PNG, DOCX, XLSX)</span>
+                </label>
+                <label for="file2" class="upload-area" title="Upload your Bonafide Certificate">
+                    Upload Bonafide Certificate
+                    <input type="file" id="file2" accept=".pdf,.jpg,.png,.docx,.xlsx">
+                    <span>(Accepted formats: PDF, JPG, PNG, DOCX, XLSX)</span>
+                </label>
+                <label for="file3" class="upload-area" title="Upload your PAN Card">
+                    Upload PAN Card
+                    <input type="file" id="file3" accept=".pdf,.jpg,.png,.docx,.xlsx">
+                    <span>(Accepted formats: PDF, JPG, PNG, DOCX, XLSX)</span>
+                </label>
+                <label for="file4" class="upload-area" title="Upload your Rashan Card">
+                    Upload Rashan Card
+                    <input type="file" id="file4" accept=".pdf,.jpg,.png,.docx,.xlsx">
+                    <span>(Accepted formats: PDF, JPG, PNG, DOCX, XLSX)</span>
+                </label>
+                <label for="file5" class="upload-area" title="Upload your Passport Size Photograph">
+                    Upload Passport Size Photograph
+                    <input type="file" id="file5" accept=".pdf,.jpg,.png,.docx,.xlsx">
+                    <span>(Accepted formats: PDF, JPG, PNG, DOCX, XLSX)</span>
+                </label>
+                <label for="file6" class="upload-area" title="Upload your Driving License">
+                    Upload Driving License
+                    <input type="file" id="file6" accept=".pdf,.jpg,.png,.docx,.xlsx">
+                    <span>(Accepted formats: PDF, JPG, PNG, DOCX, XLSX)</span>
+                </label>
+                <label for="file7" class="upload-area" title="Upload your Category Certificate">
+                    Upload Category Certificate
+                    <input type="file" id="file7" accept=".pdf,.jpg,.png,.docx,.xlsx">
+                    <span>(Accepted formats: PDF, JPG, PNG, DOCX, XLSX)</span>
+                </label>
+                <label for="file8" class="upload-area" title="Upload your Age Proof Certificate">
+                    Upload Age Proof Certificate
+                    <input type="file" id="file8" accept=".pdf,.jpg,.png,.docx,.xlsx">
+                    <span>(Accepted formats: PDF, JPG, PNG, DOCX, XLSX)</span>
+                </label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Chatbot Button -->
+    <button class="chatbot-btn" title="Chat with us!">
+        <i class="fas fa-robot"></i>
+    </button>
+
+</body>
+</html>

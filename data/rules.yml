@@ -1,0 +1,41 @@
+version: "3.1"
+rules:
+  - rule: Greet the user
+    steps:
+      - intent: greeting
+      - action: utter_greet
+
+  - rule: Explore schemes
+    steps:
+      - intent: explore_schemes
+      - action: utter_ask_age_range
+
+  - rule: Check application status
+    steps:
+      - intent: check_application_status
+      - action: utter_check_status
+
+  - rule: Select age range
+    steps:
+      - intent: select_age_range
+      - action: utter_ask_gender
+
+  - rule: Select gender
+    steps:
+      - intent: select_gender
+      - action: utter_show_schemes
+
+  - rule: Select scheme
+    steps:
+      - intent: select_scheme
+      - action: utter_ask_next_action
+
+  - rule: View scheme details
+    steps:
+      - intent: view_stats
+      - action: utter_view_stats
+
+  - rule: Apply for scheme
+    steps:
+      - intent: apply
+      - action: utter_apply

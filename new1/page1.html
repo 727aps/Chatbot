@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHEME-AID</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-family: 'Cinzel', serif; /* Classic and ethnic font */
+            overflow: hidden;
+            text-align: center;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Diamond Background Element */
+        .diamond {
+            position: absolute;
+            width: 600px;
+            height: 600px; /* Taller than wide for a slimmer look */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            border: 6px solid rgba(255, 255, 255, 0.4); /* Slightly opaque */
+            transform: rotate(45deg);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15), 0 0 30px rgba(255, 255, 255, 0.3);
+            z-index: -1;
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: 2px;
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            line-height: 1.8;
+            margin: 0 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Chatbot Button */
+        .chatbot-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #004080;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+        }
+
+        .chatbot-btn:hover {
+            background: #0066cc;
+            transform: scale(1.1);
+        }
+
+        .chatbot-btn i {
+            font-size: 1.5rem;
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Centered Diamond -->
+    <div class="diamond"></div>
+
+    <!-- Content -->
+    <h1>SCHEME-AID</h1>
+    <p>
+        Welcome to your ultimate scheme companion! Our smart chatbot effortlessly guides you through the application process, offering insightful analysis of your chosen schemes, predicting outcomes tailored to your needs, and ensuring a seamless experience — all designed to simplify and empower your journey.
+    </p>
+
+    <!-- Chatbot Button -->
+    <button class="chatbot-btn" title="Chat with us!">
+        <i class="fas fa-robot"></i>
+    </button>
+</body>
+</html>

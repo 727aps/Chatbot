@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheme Analysis - SCHEME-AID</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Analysis Container Styling */
+        .analysis-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+            width: 90%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Section Styling */
+        .section {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(255, 255, 255, 0.5);
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .section p {
+            font-size: 1rem;
+        }
+
+        /* Pie Chart Placeholder */
+        .chart {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(#4caf50 30%, #ffffff 30%);
+            box-shadow: 0 6px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Title -->
+    <h1>Scheme Analysis</h1>
+
+    <!-- Analysis Container -->
+    <div class="analysis-container">
+        <!-- Section: Successful Applicants -->
+        <div class="section">
+            <div>
+                <h2>Successful Applicants</h2>
+                <p>The scheme has benefited 40% of the applicants. These individuals have received full support and benefits as intended.</p>
+            </div>
+            <div class="chart" style="background: conic-gradient(#4caf50 40%, #ffffff 40%);"></div>
+        </div>
+
+        <!-- Section: Pending Applications -->
+        <div class="section">
+            <div>
+                <h2>Pending Applications</h2>
+                <p>30% of applicants are still waiting for a response. Efforts are being made to expedite processing.</p>
+            </div>
+            <div class="chart" style="background: conic-gradient(#ffeb3b 30%, #ffffff 30%);"></div>
+        </div>
+
+        <!-- Section: Unsuccessful Applicants -->
+        <div class="section">
+            <div>
+                <h2>Unsuccessful Applicants</h2>
+                <p>Unfortunately, 30% of applicants were deemed ineligible or faced issues during verification.</p>
+            </div>
+            <div class="chart" style="background: conic-gradient(#f44336 30%, #ffffff 30%);"></div>
+        </div>
+
+        <!-- Section: Applicants Needing Assistance -->
+        <div class="section">
+            <div>
+                <h2>Applicants Needing Assistance</h2>
+                <p>15% of applicants require additional support to meet eligibility criteria or complete the application process.</p>
+            </div>
+            <div class="chart" style="background: conic-gradient(#2196f3 15%, #ffffff 15%);"></div>
+        </div>
+
+        <!-- Section: Unresponsive Applications -->
+        <div class="section">
+            <div>
+                <h2>Unresponsive Applications</h2>
+                <p>10% of applications have had no updates due to technical or administrative delays.</p>
+            </div>
+            <div class="chart" style="background: conic-gradient(#e91e63 10%, #ffffff 10%);"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 SCHEME-AID. All Rights Reserved.
+    </footer>
+</body>
+</html>
